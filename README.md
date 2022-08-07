@@ -11,10 +11,10 @@ Patient data format is  <br>{
     "age":22,
     "room":101,
     "doctorName":"dr kashmiri",
-    "admitDate":"2022-04-21",
     "expenses":2300.12
-} <br> and username and password should be provided to access patient rest api's <br>
+} <br>admit date will be automatically fetched by system <br> and username and password should be provided to access patient rest api's <br>
 for discharge patient: localhost:8080/discharge <br>
  if Status is true: Patient admitted <br>
  If status is false: Patient Discharged <br>
+ Pagination with searching(name,age) and sorting also applied to the patient data.
 
