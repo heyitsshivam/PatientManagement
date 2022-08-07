@@ -9,19 +9,17 @@ public class CreatePatientDto {
     private int age;
     private int room;
     private String doctorName;
-    private LocalDate admitDate;
     private Double expenses;
 
     public CreatePatientDto() {
     }
 
-    public CreatePatientDto(String patientKey,String name, int age, int room, String doctorName, LocalDate admitDate, Double expenses) {
+    public CreatePatientDto(String patientKey,String name, int age, int room, String doctorName, Double expenses) {
         this.patientKey = patientKey;
         this.name = name;
         this.age = age;
         this.room = room;
         this.doctorName = doctorName;
-        this.admitDate = admitDate;
         this.expenses = expenses;
     }
 
@@ -65,13 +63,6 @@ public class CreatePatientDto {
         this.doctorName = doctorName;
     }
 
-    public LocalDate getAdmitDate() {
-        return admitDate;
-    }
-
-    public void setAdmitDate(LocalDate admitDate) {
-        this.admitDate = admitDate;
-    }
 
     public Double getExpenses() {
         return expenses;
@@ -89,7 +80,6 @@ public class CreatePatientDto {
                 ", age=" + age +
                 ", room=" + room +
                 ", doctorName='" + doctorName + '\'' +
-                ", admitDate=" + admitDate +
                 ", expenses=" + expenses +
                 '}';
     }

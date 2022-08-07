@@ -17,7 +17,7 @@ public class PatientController {
     private PatientService patientService;
 
     @PostMapping("/add")
-    public ResponseEntity<CreatePatientDto> addPatient(@RequestBody CreatePatientDto createPatientDto){
+    public ResponseEntity<PatientDto> addPatient(@RequestBody CreatePatientDto createPatientDto){
        return patientService.addPatient(createPatientDto);
     }
 
@@ -27,7 +27,10 @@ public class PatientController {
     }
 
     @GetMapping("/get")
-    public ResponseEntity<List<PatientDto>> getAllPatient(){
-        return patientService.getAllPatient();
+    public ResponseEntity<List<PatientDto>> getAllPatient(@RequestParam(required = false, defaultValue = "admitDate") String sortBy,
+                                                          @RequestParam(required = false, defaultValue = "0") int pageNo,
+                                                          @RequestParam(required = true, defaultValue = "10") int pageSize,
+                                                          @RequestParam(required = false, defaultValue = "asc") String sortOrder){
+        return patientService.getAllPatient(sortBy, pageNo, pageSize, sortOrder);
     }
 }
